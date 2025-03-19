@@ -7,7 +7,6 @@ import { useState, useEffect } from "react"
 import { ArrowRight, Leaf, Recycle, Users, Coins, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-import ContractInteraction from "@/components/ContractInteraction"
 import {
   getRecentReports,
   getAllRewards,
@@ -91,7 +90,7 @@ export default function Home() {
       <section className="mb-20 text-center">
         <AnimatedGlobe />
         <h1 className="mb-6 text-6xl font-bold tracking-tight text-gray-800">
-          Zero-to-Hero <span className="text-green-600">Waste Management</span>
+          Trash <span className="text-green-600">Track</span>
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-xl leading-relaxed text-gray-600">
           Join our community in making waste management more efficient and
