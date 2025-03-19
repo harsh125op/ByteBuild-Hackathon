@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySync - AI Learning Companion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+        .menu-button {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            left: 0;
+            top: 30px;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+        .menu:hover .dropdown {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <span class="menu-button">☰</span>
+            <div class="dropdown">
+                <a href="#home">Home</a>
+                <a href="#study-plan">Study Plan</a>
+                <a href="#ai-summary">AI Summary</a>
+                <a href="#study-group">Study Group</a>
+                <a href="#rewards">Rewards</a>
+                <a href="#downloads">Downloads</a>
+                <a href="#mind-maps">Mind Maps</a>
+            </div>
+        </div>
+        <div class="title">StudySync</div>
+    </div>
+    
+    <div class="content">
+        <h2>Welcome to StudySync</h2>
+        <p>Your AI-powered learning companion</p>
+        <h3>Current Streak: 🔥 5 Days</h3>
+        <h3>Work Progress: 📈 80% Completed</h3>
+    </div>
+    
+    <div class="footer">
+        <p>Contact Us: support@studysync.com | Terms & Conditions | License</p>
+    </div>
+</body>
+</html>
