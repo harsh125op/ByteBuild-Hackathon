@@ -33,10 +33,19 @@ typedef struct {
     char location[50];
 	char requester[50]; 
     char status[20];
+    int shiftAssigned;  
+    int checkedIn;  
 } Guard;
+
 
 Guard guards[100];  
 int count = 0; 
+int guardCount = 0;
+
+struct findguard {
+    int id;
+    int location;
+};
 
 void parseLocation(struct securityguard *sg, char *buffer) {
     sscanf(strstr(buffer, "\"city\":\"") + 8, "%[^\"]", sg->city);
@@ -158,6 +167,107 @@ void displayRequests() {
         printf("%-5d %-20s %-20s %-10s\n", guards[i].id, guards[i].name, guards[i].requester, guards[i].status);
     }
 }
+void addGuard(int n) {
+    if (guardCount < n) {
+        printf("Enter Guard ID: ");
+        scanf("%d", &guards[guardCount].id);
+        printf("Enter Guard Name: ");
+        scanf(" %[^\n]", guards[guardCount].name);
+        guards[guardCount].shiftAssigned = 0;
+        guards[guardCount].checkedIn = 0;
+        guardCount++;
+        printf("Guard added successfully!\n");
+    } else {
+        printf("Max guard limit reached!\n");
+    }
+}
+
+void assignShift() {
+    int id;
+    printf("Enter Guard ID to assign shift: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < guardCount; i++) {
+        if (guards[i].id == id) {
+            guards[i].shiftAssigned = 1;
+            printf("Shift assigned to %s\n", guards[i].name);
+            return;
+        }
+    }
+    printf("Guard not found!\n");
+}
+
+void checkIn() {
+    int id;
+    printf("Enter Guard ID to check-in: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < guardCount; i++) {
+        if (guards[i].id == id && guards[i].shiftAssigned == 1) {
+            guards[i].checkedIn = 1;
+            printf("%s checked in successfully!\n", guards[i].name);
+            return;
+        }
+    }
+    printf("Guard not found or shift not assigned!\n");
+}
+
+void checkOut() {
+    int id;
+    printf("Enter Guard ID to check-out: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < guardCount; i++) {
+        if (guards[i].id == id && guards[i].checkedIn == 1) {
+            guards[i].checkedIn = 0;
+            printf("%s checked out successfully!\n", guards[i].name);
+            return;
+        }
+    }
+    printf("Guard not found or not checked in!\n");
+}
+
+void checkAbsentGuards() {
+    printf("\n Absent Guards \n");
+    int absentCount = 0;
+    for (int i = 0; i < guardCount; i++) {
+        if (guards[i].shiftAssigned == 1 && guards[i].checkedIn == 0) {
+            printf("ALERT: Guard %s (ID: %d) is absent!\n", guards[i].name, guards[i].id);
+            absentCount++;
+        }
+    }
+    if (absentCount == 0) {
+        printf("No absent guards.\n");
+    }
+}
+
+void display() {
+    printf("\n Guard List \n");
+    if (guardCount == 0) {
+        printf("No guards added yet.\n");
+        return;
+    }
+    for (int i = 0; i < guardCount; i++) {
+        printf("ID: %d, Name: %s, Shift Assigned: %s, Checked In: %s\n",
+               guards[i].id, guards[i].name,
+               guards[i].shiftAssigned ? "Yes" : "No",
+               guards[i].checkedIn ? "Yes" : "No");
+    }
+}
+
+int findNearestGuard(struct findguard guards[], int n, int incident_location) {
+    int nearest_index = 0;
+    int min_distance = abs(guards[0].location - incident_location);
+
+    for (int i = 1; i < n; i++) {
+        int distance = abs(guards[i].location - incident_location);
+        if (distance < min_distance) {
+            min_distance = distance;
+            nearest_index = i;
+        }
+    }
+    return nearest_index;
+}
 
 int main(){
     struct securityguard sg[100];
@@ -234,7 +344,7 @@ int main(){
 	int choice;
     printf("Assigning guard:");
 	while (1) {
-        printf("\n====== Security Guard Duty System ======\n");
+        printf("\n Security Guard Duty System \n");
         printf("1. Assign New Guard\n");
         printf("2. Display All Guards\n");
         printf("3. Exit\n");
@@ -276,6 +386,46 @@ int main(){
             default: printf(" Invalid choice! Try again.\n");
         }
     }
+    
+    int Choice;
+    while (1) {
+        printf("\n Security Guard Management \n");
+        printf("1. Add Guard\n");
+        printf("2. Assign Shift\n");
+        printf("3. Check-in Guard\n");
+        printf("4. Check-out Guard\n");
+        printf("5. Check Absent Guards\n");
+        printf("6. Display Guards\n");
+        printf("7. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &Choice);
+
+        switch (Choice) {
+            case 1: addGuard(n); 
+                    break;
+            case 2: assignShift(); 
+                    break;
+            case 3: checkIn(); 
+                    break;
+            case 4: checkOut(); 
+                    break;
+            case 5: checkAbsentGuards();
+                    break;
+            case 6: display(); 
+                    break;
+            case 7: printf("Exiting...\n"); 
+                    return;
+            default: printf("Invalid choice! Try again.\n");
+        }
+    }
+    
+    struct findguard guards[3] = { {101, 10}, {102, 20}, {103, 30} };  
+    int incident_location;
+    printf("Enter incident location (number): ");
+    scanf("%d", &incident_location);
+    int nearest_guard = findNearestGuard(guards, 3, incident_location);
+    printf("Incident reported at location %d\n", incident_location);
+    printf("Nearest guard assigned: ID %d at location %d\n", guards[nearest_guard].id, guards[nearest_guard].location);
 
     return 0;
 
