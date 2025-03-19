@@ -16,24 +16,7 @@ struct securityguard{
     double Longitude;
 };
 
-void printLocation() {
-    FILE *file = fopen("location.json", "r");
-    if (!file) {
-        printf("Error: Cannot open location.json\n");
-        return;
-    }
-    char buffer[1024];
-    fread(buffer, sizeof(buffer), 1, file);
-    fclose(file);
-    char city[50], country[50];
-    double latitude, longitude;
-    sscanf(strstr(buffer, "\"city\":\"") + 8, "%[^\"]", city);
-    sscanf(strstr(buffer, "\"country\":\"") + 11, "%[^\"]", country);
-    sscanf(strstr(buffer, "\"lat\":") + 6, "%lf", &latitude);
-    sscanf(strstr(buffer, "\"lon\":") + 6, "%lf", &longitude);
-    printf("Location: %s, %s\n", city, country);
-    printf("Coordinates: Latitude: %lf, Longitude: %lf\n", latitude, longitude);
-}
+
 void parseLocation(struct securityguard *sg, char *buffer) {
     sscanf(strstr(buffer, "\"city\":\"") + 8, "%[^\"]", sg->city);
     sscanf(strstr(buffer, "\"country\":\"") + 11, "%[^\"]", sg->country);
