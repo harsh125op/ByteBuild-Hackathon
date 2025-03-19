@@ -75,7 +75,7 @@ int main(){
         char buffer[1024];
         fread(buffer, sizeof(buffer), 1, file);
         fclose(file);
-        parseLocation(&sg[i], buffer);	
+        parseLocation(&sg[i], buffer);	//hhh
     }
     printGuards(sg, n);
     return 0;
