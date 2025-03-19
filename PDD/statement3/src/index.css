@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    color: #000;
+  }
+}
+@layer components {
+  .spon_img {
+    @apply w-[100px] mix-blend-multiply grayscale-100 max-md:w-[50px];
+  }
+}
+@layer utilities {
+  .bg-pattern {
+    background-color: #f06161;
+    opacity: 1;
+    background-image: linear-gradient(#fff 1px, transparent 1px),
+      linear-gradient(to right, #fff 1px, #f06161 1px);
+    background-size: 120px 120px;
+  }
+  .text-outline {
+    font-family: "Londrina Outline", sans-serif;
+  }
+  .text-outline-2 {
+    -webkit-text-stroke: 1px black; /* Creates the stroke effect */
+    color: transparent; /* Makes the inner text transparent */
+  }
+  .text-outline-white {
+    -webkit-text-stroke: 1px white; /* Creates the stroke effect */
+    color: transparent; /* Makes the inner text transparent */
+  }
+  .gradient-1 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      101deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(205, 242, 196, 1) 15%,
+      rgba(156, 230, 139, 1) 100%
+    );
+  }
+  .gradient-2 {
+    background: rgb(252, 182, 96);
+    background: linear-gradient(
+      101deg,
+      rgba(252, 182, 96, 1) 0%,
+      rgba(253, 205, 145, 1) 73%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  .gradient-3 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      101deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(247, 140, 173, 1) 33%,
+      rgba(245, 118, 157, 1) 94%,
+      rgba(247, 141, 173, 1) 100%
+    );
+  }
+  .pattern-1 {
+    background-color: #f2ece7;
+    opacity: 0.8;
+    background: radial-gradient(
+        circle,
+        transparent 20%,
+        #f2ece7 20%,
+        #f2ece7 80%,
+        transparent 80%,
+        transparent
+      ),
+      radial-gradient(
+          circle,
+          transparent 20%,
+          #f2ece7 20%,
+          #f2ece7 80%,
+          transparent 80%,
+          transparent
+        )
+        17.5px 17.5px,
+      linear-gradient(
+          #b4b4b4 1.4000000000000001px,
+          transparent 1.4000000000000001px
+        )
+        0 -0.7000000000000001px,
+      linear-gradient(
+          90deg,
+          #b4b4b4 1.4000000000000001px,
+          #f2ece7 1.4000000000000001px
+        ) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+  }
+  .writing-mode-vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+/* *{
+  border: 1px solid;
+} */
+body {
+  font-family: "Lexend", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #f06161;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
