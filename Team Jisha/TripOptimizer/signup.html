@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | TRIP OPTIMIZER</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">TRIP OPTIMIZER</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page4(about).html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html" id="openSignup">Signup</a></li>
+    </ul>
+  </nav>
+  <!-- Signup Popup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeSignup">&times;</span>
+      <h2><b>Create Your Account</b></h2>
+      <!-- <p><b> </b>!</p> -->
+
+      <form id="signup-form" style="color: white;">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+
+        <label for="email-phone">Email or Phone</label>
+        <input type="text" id="email-phone" required placeholder="Enter email or phone">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="Create a password">
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
