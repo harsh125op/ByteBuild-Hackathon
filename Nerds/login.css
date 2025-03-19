@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #141e30, #243b55);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    text-align: center;
+    
+}
+
+/* Form Toggle */
+.form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.form-toggle button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-toggle .active {
+    border-bottom: 2px solid #007BFF;
+    color: #007BFF;
+}
+
+/* Forms */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.form input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    background: #0056b3;
+}
+
+/* Social Login */
+.social-login {
+    margin-top: 15px;
+}
+
+.social-login button {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.google {
+    background: #DB4437;
+    color: white;
+}
+
+.facebook {
+    background: #4267B2;
+    color: white;
+}
+
+.google:hover,
+.facebook:hover {
+    opacity: 1;
+}

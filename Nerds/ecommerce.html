@@ -11,7 +11,7 @@
 <body>
 
     <nav class="navbar">
-        <h2>🛍️ BizBoost Store</h2>
+        <h2> BizBoost Store</h2>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="analytics.html">Analytics</a></li>
@@ -19,29 +19,26 @@
     </nav>
 
     <section class="ecommerce">
-        <h2>🛒 Add a Product</h2>
+        <h2> Add a Product</h2>
         <input type="text" id="product-name" placeholder="Product Name">
         <input type="text" id="product-price" placeholder="Price">
         <input type="file" id="product-image">
-        <button onclick="addProduct()">Add Product</button>
+        <p><button onclick="addProduct()">Add Product</button></p>
+        
     </section>
 
     <section class="storefront">
-        <h2>🛍 Available Products</h2>
+        <h2> Available Products</h2>
         <div id="product-list"></div>
     </section>
 
     <section class="checkout">
-        <h2>💳 Secure Checkout</h2>
+        <h2>Secure Checkout</h2>
         <button onclick="initiatePayment()">Checkout</button>
     </section>
 
     <section class="ar-preview">
-        <h2>🕶️ Augmented Reality Product Preview</h2>
-        <a-scene embedded>
-            <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-            <a-light type="point" intensity="1" position="2 4 4"></a-light>
-        </a-scene>
+        <h2>Augmented Reality Product Preview</h2>
     </section>
 
 </body>
