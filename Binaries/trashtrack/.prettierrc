@@ -4,8 +4,25 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "importOrder": [],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "importOrder": [
+    "^react$",
+    "^next",
+    "<THIRD_PARTY_MODULES>",
+    "^@/components/ui/(.*)$",
+    "^@/components/shared/(.*)$",
+    "^@/components/function/(.*)$",
+    "^@/components/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/backend/(.*)$",
+    "^@/data/(.*)$",
+    "^@/assets/(.*)$",
+    "^[./]"
+  ],
   "importOrderSeparation": false,
-  "importOrderSortSpecifiers": false
+  "importOrderSortSpecifiers": true
 }

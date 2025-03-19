@@ -1,1 +1,3 @@
 # TrashTrack
+
+With the help of technology, TrashTrack is a waste management tool developed for the purpose of increasing waste recycling awareness, disposal, and tracking. It allows the residents to set appointments for collections, check where nearby waste containers are, and watch the rubbish gathering process unfold in real time. TrashTrack elevates community participation in maintaining cleaner environments through real time reporting of overflowing bins and illegal dumping. The portal also promotes fundraising through an ethical disposal campaign while providing education on trash segregation by way of a rewards and leaderboard. TrashTrack streamlines the waste collection routes by connecting with municipal systems, ensuring smarter waste management.
