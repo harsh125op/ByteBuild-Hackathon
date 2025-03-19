@@ -34,9 +34,10 @@ typedef struct {
 	char requester[50]; 
     char status[20];
     int shiftAssigned;  
-    int checkedIn;  
+    int checkedIn;
+    int ratings[10]; 
+    int ratingCount;   
 } Guard;
-
 
 Guard guards[100];  
 int count = 0; 
@@ -46,6 +47,8 @@ struct findguard {
     int id;
     int location;
 };
+
+
 
 void parseLocation(struct securityguard *sg, char *buffer) {
     sscanf(strstr(buffer, "\"city\":\"") + 8, "%[^\"]", sg->city);
@@ -269,6 +272,101 @@ int findNearestGuard(struct findguard guards[], int n, int incident_location) {
     return nearest_index;
 }
 
+void addRating() {
+    int id, rating, i, found = 0;
+
+    printf("\nEnter Guard ID: ");
+    scanf("%d", &id);
+
+    for (i = 0; i < guardCount; i++) {
+        if (guards[i].id == id) {
+            found = 1;
+            if (guards[i].ratingCount < 10) {
+                printf("Enter rating (1-5): ");
+                scanf("%d", &rating);
+                
+                if (rating < 1 || rating > 5) {
+                    printf("Invalid rating! Please enter a value between 1 and 5.\n");
+                    return;
+                }
+
+                guards[i].ratings[guards[i].ratingCount] = rating;
+                guards[i].ratingCount++;
+                printf("Rating added successfully!\n");
+            } else {
+                printf("Maximum ratings reached for this guard!\n");
+            }
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Guard not found! Add the guard first.\n");
+    }
+}
+
+void add_Guard(int n) {
+    if (guardCount < n) {
+        printf("\nEnter Guard ID: ");
+        scanf("%d", &guards[guardCount].id);
+        
+        printf("Enter Guard Name: ");
+        scanf(" %[^\n]", guards[guardCount].name);
+        
+        guards[guardCount].ratingCount = 0;
+        guardCount++;
+        printf("Guard added successfully!\n");
+    } else {
+        printf("Guard list is full!\n");
+    }
+}
+
+void display_Guards() {
+    int i, j;
+    if (guardCount == 0) {
+        printf("\nNo guards available!\n");
+        return;
+    }
+
+    printf("\nGuard Performance Report:\n");
+    printf("\n");
+    for (i = 0; i < guardCount; i++) {
+        printf("ID: %d | Name: %s | Ratings: ", guards[i].id, guards[i].name);
+        if (guards[i].ratingCount == 0) {
+            printf("No ratings yet.\n");
+        } else {
+            for (j = 0; j < guards[i].ratingCount; j++) {
+                printf("%d ", guards[i].ratings[j]);
+            }
+            printf("\n");
+        }
+    }
+}
+
+void averageRatings() {
+    int i, j;
+    if (guardCount == 0) {
+        printf("\nNo guards available!\n");
+        return;
+    }
+
+    printf("\nGuard Average Ratings:\n");
+    printf("\n");
+    for (i = 0; i < guardCount; i++) {
+        if (guards[i].ratingCount == 0) {
+            printf("ID: %d | Name: %s | No ratings yet.\n", guards[i].id, guards[i].name);
+        } else {
+            float sum = 0;
+            for (j = 0; j < guards[i].ratingCount; j++) {
+                sum += guards[i].ratings[j];
+            }
+            printf("ID: %d | Name: %s | Average Rating: %.2f\n", 
+                   guards[i].id, guards[i].name, sum / guards[i].ratingCount);
+        }
+    }
+}
+
+
 int main(){
     struct securityguard sg[100];
     int n;
@@ -342,31 +440,35 @@ int main(){
     }
 
 	int choice;
+    int a=1;
     printf("Assigning guard:");
-	while (1) {
+	while (a) {
         printf("\n Security Guard Duty System \n");
         printf("1. Assign New Guard\n");
         printf("2. Display All Guards\n");
-        printf("3. Exit\n");
+        printf("3.to exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
                 assignGuard(n);
+                a=0;
                 break;
             case 2:
                 displayGuards();
+                a=0;
                 break;
             case 3:
                 printf("Exiting program.\n");
-                return 0;
+                a=0;
             default:
                 printf(" Invalid choice. Try again.\n");
         }
     }
 	int option;
-    while (1) {
+    int b=1;
+    while (b) {
         printf("\n Guard Verification System");
         printf("\n1 Request Background Verification");
         printf("\n2 Update Verification Status");
@@ -377,18 +479,21 @@ int main(){
 
         switch (option) {
             case 1: requestVerification(n);
+                    b=0;
 			        break;
             case 2: updateStatus();
+                    b=0;
 			        break;
             case 3: displayRequests();
+                    b=0;
 			        break;
-            case 4: exit(0);
             default: printf(" Invalid choice! Try again.\n");
         }
     }
     
     int Choice;
-    while (1) {
+    int c=1;
+    while (c) {
         printf("\n Security Guard Management \n");
         printf("1. Add Guard\n");
         printf("2. Assign Shift\n");
@@ -402,19 +507,26 @@ int main(){
 
         switch (Choice) {
             case 1: addGuard(n); 
+                    c=0;
                     break;
             case 2: assignShift(); 
+                    c=0;
                     break;
             case 3: checkIn(); 
+                    c=0;
                     break;
             case 4: checkOut(); 
+                    c=0;
                     break;
             case 5: checkAbsentGuards();
+                    c=0;
                     break;
             case 6: display(); 
+                    c=0;
                     break;
             case 7: printf("Exiting...\n"); 
-                    return;
+                    c=0;
+                    break;
             default: printf("Invalid choice! Try again.\n");
         }
     }
@@ -427,6 +539,38 @@ int main(){
     printf("Incident reported at location %d\n", incident_location);
     printf("Nearest guard assigned: ID %d at location %d\n", guards[nearest_guard].id, guards[nearest_guard].location);
 
+    int yourchoice;
+
+    do {
+        printf("\n Guard Performance & Feedback System \n");
+        printf("1. Add Guard\n");
+        printf("2. Add Rating\n");
+        printf("3. Display Guards & Ratings\n");
+        printf("4. Display Average Ratings\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &yourchoice);
+
+        switch (yourchoice) {
+            case 1:
+                add_Guard(n);
+                break;
+            case 2:
+                addRating();
+                break;
+            case 3:
+                display_Guards();
+                break;
+            case 4:
+                averageRatings();
+                break;
+            case 5:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (yourchoice != 5);
     return 0;
 
 }
