@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBoost - Website Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>🖥️ No-Code Website Builder</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="seo.html">SEO</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <section class="builder">
+        <h2>🛠️ Drag and Drop to Build Your Website</h2>
+        <div class="builder-canvas" id="canvas">
+            <p>Drop elements here...</p>
+        </div>
+        <div class="elements">
+            <button draggable="true" ondragstart="drag(event)">📄 Text</button>
+            <button draggable="true" ondragstart="drag(event)">🖼 Image</button>
+            <button draggable="true" ondragstart="drag(event)">🔗 Button</button>
+        </div>
+    </section>
+
+</body>
+</html>
