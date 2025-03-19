@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🗺 Travel Itinerary Builder</h2>
+        
+        <label>Destination:</label>
+        <input type="text" id="destination" placeholder="Enter your destination">
+
+        <label>Start Date:</label>
+        <input type="date" id="startDate">
+
+        <label>End Date:</label>
+        <input type="date" id="endDate">
+
+        <label>Budget ($):</label>
+        <input type="number" id="budget" placeholder="Enter budget">
+
+        <label>Interests (e.g. Food, Adventure, History):</label>
+        <textarea id="interests" placeholder="Enter your interests"></textarea>
+
+        <button onclick="saveItinerary()">Save Itinerary</button>
+        <button onclick="loadItinerary()">Load Itinerary</button>
+
+        <h3>📌 Saved Itinerary</h3>
+        <pre id="itineraryDisplay">No itinerary saved yet.</pre>
+    </div>
+
+    <script>
+        function saveItinerary() {
+            const itinerary = {
+                destination: document.getElementById("destination").value,
+                startDate: document.getElementById("startDate").value,
+                endDate: document.getElementById("endDate").value,
+                budget: document.getElementById("budget").value,
+                interests: document.getElementById("interests").value
+            };
+
+            localStorage.setItem("itinerary", JSON.stringify(itinerary));
+            alert("Itinerary saved successfully!");
+        }
+
+        function loadItinerary() {
+            let itinerary = localStorage.getItem("itinerary");
+            if (itinerary) {
+                document.getElementById("itineraryDisplay").textContent = JSON.stringify(JSON.parse(itinerary), null, 2);
+            } else {
+                alert("No saved itinerary found.");
+            }
+        }
+    </script>
+
+</body>
+</html>

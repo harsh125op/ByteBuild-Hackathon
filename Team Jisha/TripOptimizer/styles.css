@@ -98,7 +98,7 @@ header{
 }
 
 .hero-info p{
-    color:black;
+    color:white;
     max-width: 210px;
 }
 
@@ -111,6 +111,7 @@ header{
     color: black;
     transition: 0.3s;
 }
+
 
 .hero-info button:hover{
     background-color: transparent;
@@ -349,7 +350,7 @@ header{
     top: 10%;
     right: 20px;
     height: 400px;
-    clip-path: polygon(32% 0,94% 0,74% 100%, 0% 100%);
+    clip-path: polygon(35% 6%, 75% 0%, 100% 50%, 75% 100%, 36% 95%,8% 49%);
 }
 
 .contact-section .img2{
@@ -367,6 +368,14 @@ header{
     height: 250px;
     width: 250px;
     clip-path: polygon(52% 5%, 100% 38%, 82% 100%, 34% 93%, 0% 38%);
+}
+
+.contact-section .img4{
+    position: absolute;
+    top: 5%;
+    right: 5px;
+    height: 400px;
+    clip-path: polygon(35% 6%, 75% 0%, 100% 50%, 75% 100%, 36% 95%,8% 49%);
 }
 
 .contact-section p{
