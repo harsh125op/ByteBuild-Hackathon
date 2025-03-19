@@ -48,6 +48,11 @@ body {
 .form {
     display: flex;
     flex-direction: column;
+    
+}
+.form h2{
+    color: #007BFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hidden {
