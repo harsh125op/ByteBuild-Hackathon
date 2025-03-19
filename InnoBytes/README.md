@@ -41,3 +41,4 @@ def main():
 # Call the main function
 if name == "main":
     main()
+def main2()
