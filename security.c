@@ -31,6 +31,8 @@ typedef struct {
     char name[50];
     char address[100];  
     char location[50];
+	char requester[50]; 
+    char status[20];
 } Guard;
 
 Guard guards[100];  
@@ -89,6 +91,73 @@ void displayGuards() {
                guards[i].id, guards[i].name, guards[i].address, guards[i].location);
     }
 }
+void requestVerification(int n) {
+    if (count >= n) {
+        printf(" Maximum guard limit reached!\n");
+        return;
+    }
+
+    Guard g;
+    printf("\nEnter Guard ID: ");
+    scanf("%d", &g.id);
+    printf("Enter Guard Name: ");
+    getchar(); 
+    fgets(g.name, sizeof(g.name), stdin);
+    g.name[strcspn(g.name, "\n")] = '\0';
+
+    printf("Enter Requester Type (Police / Business / Resident): ");
+    fgets(g.requester, sizeof(g.requester), stdin);
+    g.requester[strcspn(g.requester, "\n")] = '\0';
+
+    strcpy(g.status, "Pending"); 
+
+    guards[count++] = g; 
+    printf("Guard verification request submitted successfully!\n");
+}
+void updateStatus() {
+    if (count == 0) {
+        printf(" No guard records found!\n");
+        return;
+    }
+
+    int id, found = 0;
+    char newStatus[20];
+
+    printf("\nEnter Guard ID to update status: ");
+    scanf("%d", &id);
+
+    for (int i = 0; i < count; i++) {
+        if (guards[i].id == id) {
+            printf("Current Status: %s\n", guards[i].status);
+            printf("Enter new status (Approved / Rejected): ");
+            getchar();
+            fgets(newStatus, sizeof(newStatus), stdin);
+            newStatus[strcspn(newStatus, "\n")] = '\0';
+
+            strcpy(guards[i].status, newStatus);
+            found = 1;
+            printf("Status updated successfully!\n");
+            break;
+        }
+    }
+
+    if (!found)
+        printf(" Guard ID not found!\n");
+}
+void displayRequests() {
+    if (count == 0) {
+        printf(" No guard records found!\n");
+        return;
+    }
+
+    printf("\n  Guard Verification Requests :\n");
+    printf("%-5s %-20s %-20s %-10s\n", "ID", "Name", "Requester", "Status");
+    printf("\n");
+
+    for (int i = 0; i < count; i++) {
+        printf("%-5d %-20s %-20s %-10s\n", guards[i].id, guards[i].name, guards[i].requester, guards[i].status);
+    }
+}
 
 int main(){
     struct securityguard sg[100];
@@ -118,10 +187,6 @@ int main(){
     printf("option:\n1.admin\n2.police\n3.owner\n4.fielduser\nEnter your username:");
     scanf("%s", username);
     Role userRole = getUserRole(username,n);
-
-	
-
-   
 
 	printf("\n The details of the security guards are: \n");
     for(int i=0; i<n; i++){
@@ -188,6 +253,27 @@ int main(){
                 return 0;
             default:
                 printf(" Invalid choice. Try again.\n");
+        }
+    }
+	int option;
+    while (1) {
+        printf("\n Guard Verification System");
+        printf("\n1 Request Background Verification");
+        printf("\n2 Update Verification Status");
+        printf("\n3 Display All Requests");
+        printf("\n4 Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d", &option);
+
+        switch (option) {
+            case 1: requestVerification(n);
+			        break;
+            case 2: updateStatus();
+			        break;
+            case 3: displayRequests();
+			        break;
+            case 4: exit(0);
+            default: printf(" Invalid choice! Try again.\n");
         }
     }
 
