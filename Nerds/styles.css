@@ -227,6 +227,12 @@ nav h2{
     background: linear-gradient(135deg, #10c7df, #0c67cf);
   
 }
+.create a{
+    color: white;
+    font-family: 400;
+    font-display: bold;
+    text-decoration: none;
+}
 
 @keyframes rgbBorder{
     0%{border-color: red;}
