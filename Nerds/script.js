@@ -13,7 +13,7 @@ function scheduleAd() {
     document.getElementById("scheduled-ads").appendChild(adItem);
 }
 
-// 🎯 AI-Based Marketing Strategy Generator
+// AI-Based Marketing Strategy Generator
 function generateMarketingStrategy() {
     const businessType = document.getElementById("business-type").value.trim();
     if (!businessType) {
