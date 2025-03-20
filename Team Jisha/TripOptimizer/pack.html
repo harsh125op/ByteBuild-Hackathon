@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Click Travel Booking</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            color: #ffa500;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #ddd;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #00ffcc;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .book-now {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #0088cc;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explore the World with One-Click Booking</h1>
+    <div class="container">
+
+        <!-- Package 1: Bali -->
+        <div class="card">
+            <img src="photos/baliescape.jpg" alt="Bali">
+            <h2>🌴 Bali Escape</h2>
+            <p><b>Hotel:</b> 5-Star Beachfront Resort</p>
+            <p><b>Food:</b> Indonesian Cuisine, Seafood Buffets</p>
+            <p><b>Activities:</b> Snorkeling, Temple Tours, Yoga Retreat</p>
+            <p><b>Best Time:</b> April - October</p>
+            <p><b>Duration:</b> 7 Days / 6 Nights</p>
+            <p class="price">₹82,000</p>
+            <a href="pay.html"><button class="book-now" onclick="bookNow('Bali Escape')">Book Now</button></a>
+        </div>
+
+        <!-- Package 2: Switzerland -->
+        <div class="card">
+            <img src="photos/swiss.jpg" alt="Switzerland">
+            <h2>🏔 Swiss Adventure</h2>
+            <p><b>Hotel:</b> Alpine Chalet with Mountain Views</p>
+            <p><b>Food:</b> Swiss Cheese Fondue, Gourmet Dining</p>
+            <p><b>Activities:</b> Skiing, Glacier Hiking, Cable Car Rides</p>
+            <p><b>Best Time:</b> December - March</p>
+            <p><b>Duration:</b> 6 Days / 5 Nights</p>
+            <p class="price">₹1,07,000</p>
+            <a href="pay.html"><button class="book-now" onclick="bookNow('Bali Escape')">Book Now</button></a>
+        </div>
+
+        <!-- Package 3: Kashmir -->
+        <div class="card">
+            <img src="photos/kashmirparadise.jpg" alt="Kashmir">
+            <h2>❄ Kashmir Paradise</h2>
+            <p><b>Hotel:</b> Houseboat on Dal Lake</p>
+            <p><b>Food:</b> Kashmiri Wazwan, Kebabs</p>
+            <p><b>Activities:</b> Shikara Rides, Gondola in Gulmarg, Trekking</p>
+            <p><b>Best Time:</b> March - May, September - November</p>
+            <p><b>Duration:</b> 6 Days / 5 Nights</p>
+            <p class="price">₹58,000</p>
+            <a href="pay.html"><button class="book-now" onclick="bookNow('Bali Escape')">Book Now</button></a>
+        </div>
+
+        <!-- Package 4: Manali -->
+        <div class="card">
+            <img src="photos/manali adventure.jpg" alt="Manali">
+            <h2>🏞 Manali Adventure</h2>
+            <p><b>Hotel:</b> Riverside Wooden Cottages</p>
+            <p><b>Food:</b> Himachali Cuisine, Tibetan Street Food</p>
+            <p><b>Activities:</b> Rohtang Pass, Solang Valley, Paragliding</p>
+            <p><b>Best Time:</b> October - June</p>
+            <p><b>Duration:</b> 5 Days / 4 Nights</p>
+            <p class="price">₹46,000</p>
+            <a href="pay.html"><button class="book-now" onclick="bookNow('Bali Escape')">Book Now</button></a>
+        </div>
+
+        <!-- Package 5: Goa -->
+        <div class="card">
+            <img src="photos/goabeach.jpg" alt="Goa">
+            <h2>🏖 Goa Beach Fun</h2>
+            <p><b>Hotel:</b> Beachside Resort with Pool</p>
+            <p><b>Food:</b> Goan Seafood, Beach Shacks</p>
+            <p><b>Activities:</b> Water Sports, Nightlife, Island Tours</p>
+            <p><b>Best Time:</b> November - March</p>
+            <p><b>Duration:</b> 4 Days / 3 Nights</p>
+            <p class="price">₹39,000</p>
+            <a href="pay.html"><button class="book-now" onclick="bookNow('Bali Escape')">Book Now</button></a>
+        </div>
+
+    </div>
+
+    <script>
+        function bookNow(packageName) {
+            let amount = {
+                "Bali Escape": 82000,
+                "Swiss Adventure": 107000,
+                "Kashmir Paradise": 58000,
+                "Manali Adventure": 46000,
+                "Goa Beach Fun": 39000
+            };
+
+            let url = ⁠ payment.html?package=${packageName}&amount=${amount[packageName]} ⁠;
+            window.location.href = url;
+        }
+    </script>
+
+    <script>
+        function bookNow(packageName){
+            alert("Booking will be confirmed for " + packageName + " after the payment is successful. Proceed to pay!")
+        }
+        </script>
+</body>
+</html>
