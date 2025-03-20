@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Optimizer</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Leaflet CSS (Map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+<!-- ===========================
+         MAP SECTION
+=========================== -->
+<div id="map" style="height: 500px; width: 100%;"></div>
+
+<div class="container">
+    <!-- ===========================
+            HEADER
+    =========================== -->
+    <header>
+        <div class="head-left">
+            <img src="photos/logo.jpg" alt="logo">
+            <a href="pack.html"><button>Packages</button></a>
+        </div>
+        <div class="head-right">
+            <p><a href="signup.html">SIGN UP</a></p>
+            <p><a href="itenerary.html">MY ITENERARY</a></p>
+            <p><a href="#">ABOUT</a></p>
+            <p><a href="#">SERVICES</a></p>
+            <p><a href="#">CONTACT</a></p>
+            
+            <!-- ✅ Language Switcher (Fixed Position) -->
+            <select id="languageSelector">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===========================
+            HERO SECTION
+    =========================== -->
+    <section class="hero-section autoBlur">
+        <div class="hero-vid">
+            <video loop autoplay muted plays-inline class="hero-video">
+                <source src="videos/manali.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-info">
+                <h1 id="translatedText">TRIP OPTIMIZER</h1>
+                <p id="optimizeText">Optimize Your Journey</p>
+                <p id="adventureText">Maximize Your Adventure</p>
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+            </div>
+            <h1 class="travel-text">travel</h1>
+        </div>
+    </section>
+
+    <!-- ===========================
+            ABOUT SECTION
+    =========================== -->
+    <section class="about-section">
+        <p>Welcome to Trip Optimizer</p>
+        <div class="autoBlur">
+            <h1>Never hesitate to go far away, beyond all seas, all frontiers, all countries, all beliefs!</h1>
+        </div>
+        <div class="image-box autoTakeFull">
+            <img src="photos/pic.jpg" alt="about-img"> 
+        </div>
+        <h4>Wander often, optimize always</h4>
+        <h5>Explore the world freely while we handle the planning, ensuring you get the best routes, costs, and experiences.</h5>
+    </section>
+
+    <!-- ===========================
+            INFO SECTION
+    =========================== -->
+    <section class="info-section">
+        <h3>Your trip, Your way</h3>
+        <p>Customize your travel plans with ease, from must-visit attractions to hidden gems.</p>
+
+        <div class="info-cards">
+            <div class="card autoDisplay">
+                <h1>MANALI</h1>
+                <p>Snow-capped peaks and adventure activities.</p>
+                <video src="videos/manali.mp4" autoplay loop muted plays-inline></video>
+                <button>BOOK NOW</button>
+            </div>
+
+            <div class="card autoDisplay">
+                <h1>BALI</h1>
+                <p>Stunning beaches and vibrant culture.</p>
+                <video src="videos/bali.mp4" autoplay loop muted plays-inline></video>
+                <button>BOOK NOW</button>
+            </div>
+
+            <div class="card autoDisplay">
+                <h1>GOA</h1>
+                <p>Golden sands and vibrant nightlife.</p>
+                <video src="videos/goa.mp4" autoplay loop muted plays-inline></video>
+                <button>BOOK NOW</button>
+            </div>
+
+            <div class="card autoDisplay">
+                <h1>KASHMIR</h1>
+                <p>Stunning valleys and serene lakes.</p>
+                <video src="videos/kashmir.mp4" autoplay loop muted plays-inline></video>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+            CONTACT SECTION
+    =========================== -->
+    <section class="contact-section">
+        <p>Join Trip Optimizer</p>
+        <h1>Lets Build The New Era Of Smart Travel Together</h1>
+        <button>CONTACT US</button>
+    </section>
+
+
+     <!-- Calculator Icon -->
+<div id="calculator-container">
+    <div id="calculator-tooltip">Hello👋 May I Calculate?</div>
+    <a href="calculator.html"><img src="photos/calculator.jpg" id="calculator-icon" alt="calculator"></a>
+  </div>
+
+
+
+    <!-- Chatbot Icon -->
+<div id="chatbot-container">
+    <div id="chatbot-tooltip">Hello👋 I am your Travel Guide!<br>May I help you?😊</div>
+    <a href="chatbot.html"><img src="photos/chatbot.jpeg" id="chatbot-icon" alt="Chatbot"></a>
+  </div>
+
+    <!-- ===========================
+            FOOTER
+    =========================== -->
+    <section class="footer">
+        <p>@Trip Optimizer 2025. All Rights Reserved</p>
+        <ul>
+            <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+            <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+            <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+        </ul>
+        <p>Privacy Policy</p>
+    </section>
+</div>
+
+<!-- ===========================
+         EXTERNAL SCRIPTS
+=========================== -->
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
+
+<!-- i18next -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js"></script>
+
+<!-- Link to your script -->
+<script src="script.js"></script>
+
+</body>
+</html>

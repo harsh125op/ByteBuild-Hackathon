@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+body {
+  background-color:red;
+  background-image:url(photos/travel2.jpg);
+  background-size: cover;
+
+}
+
+.chat-container {
+    background:rgb(66, 144, 170);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+}
+.chat-container h2 {
+color:white;
+}
+    
+.chat-box {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-message {
+    margin: 5px 0;
+}
+
+.user {
+    text-align: right;
+}
+
+.bot {
+    text-align: left;
+    color:white;
+}
+/* Add to styles.css */
+.chat-message img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  .h2{
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+  }
+  .h2{
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  /* Navigation Bar */
+  .nav-menu {
+    position: fixed;
+    width:100%;
+    left:0%;
+    background-color: #ff8000;
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+      padding: 30px 50px;
+      top:0;
+      align-items: center;
+  }
+  
+  .nav-menu{
+    margin:0px;
+    padding-left: 0%;
+    padding-top: 0.1vh;
+  
+  }
+  
+  .nav-menu a {
+      text-decoration: none;
+      font-weight: 5000;
+      color:white;
+      
+  }
+  

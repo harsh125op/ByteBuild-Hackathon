@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker & Expense Estimator</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background: #333;
+            color: white;
+        }
+
+        .total {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .calculate {
+            background-color: #00aaff;
+            color: white;
+        }
+
+        .reset {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .calculate:hover {
+            background-color: #0088cc;
+        }
+
+        .reset:hover {
+            background-color: #cc0000;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Budget Tracker & Expense Estimator</h1>
+    
+    <div class="container">
+        <label>🏨 Accommodation (₹):</label>
+        <input type="number" id="accommodation" placeholder="Enter amount">
+
+        <label>🍽 Food & Drinks (₹):</label>
+        <input type="number" id="food" placeholder="Enter amount">
+
+        <label>🚗 Transport (₹):</label>
+        <input type="number" id="transport" placeholder="Enter amount">
+
+        <label>🎢 Activities & Tours (₹):</label>
+        <input type="number" id="activities" placeholder="Enter amount">
+
+        <label>🎁 Miscellaneous (₹):</label>
+        <input type="number" id="misc" placeholder="Enter amount">
+
+        <div class="total">Total Budget: ₹<span id="total-budget">0</span></div>
+
+        <div class="buttons">
+            <button class="calculate" onclick="calculateTotal()">Calculate</button>
+            <button class="reset" onclick="resetValues()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            let accommodation = parseFloat(document.getElementById("accommodation").value) || 0;
+            let food = parseFloat(document.getElementById("food").value) || 0;
+            let transport = parseFloat(document.getElementById("transport").value) || 0;
+            let activities = parseFloat(document.getElementById("activities").value) || 0;
+            let misc = parseFloat(document.getElementById("misc").value) || 0;
+
+            let total = accommodation + food + transport + activities + misc;
+            document.getElementById("total-budget").innerText = total.toLocaleString();
+        }
+
+        function resetValues() {
+            document.getElementById("accommodation").value = "";
+            document.getElementById("food").value = "";
+            document.getElementById("transport").value = "";
+            document.getElementById("activities").value = "";
+            document.getElementById("misc").value = "";
+            document.getElementById("total-budget").innerText = "0";
+        }
+    </script>
+
+</body>
+</html>

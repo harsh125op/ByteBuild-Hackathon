@@ -1,0 +1,46 @@
+{
+    "Agra": {
+        "attractions": [
+            {
+                "name": "Taj Mahal",
+                "category": "historical",
+                "thumbnail": "https://i.natgeofe.com/n/8eba070d-14e5-4d07-8bab-9db774029063/93080_2x1.jpg",
+                "rating": "4.8",
+                "reviews": "1320",
+                "estimated_cost":"1200"
+            },
+            {
+                "name": "Taj Mahal Restro",
+                "category": "food",
+                "thumbnail": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/8b/4e/ab/new-place.jpg",
+                "rating": "3.8",
+                "reviews": "320",
+                "estimated_cost":"1500"
+            }
+        ]
+    },
+    "Mumbai": {
+            "attractions": []
+        },
+    "Kolkata": {
+            "attractions": [
+                {
+                    "name": "Taj Mahal - Kolkata wala",
+                    "category": "historical",
+                    "thumbnail": "https://i.natgeofe.com/n/8eba070d-14e5-4d07-8bab-9db774029063/93080_2x1.jpg",
+                    "rating": "4.8",
+                    "reviews": "1320",
+                    "estimated_cost":"1200"
+                },
+                {
+                    "name": "Taj Mahal Restro - rosogulla",
+                    "category": "food",
+                    "thumbnail": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/8b/4e/ab/new-place.jpg",
+                    "rating": "3.8",
+                    "reviews": "320",
+                    "estimated_cost":"1500"
+                }
+            ]
+        }
+    
+}
