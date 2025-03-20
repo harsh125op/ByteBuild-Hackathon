@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBoost AI Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2> AI Marketing Assistant</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ecommerce.html">E-commerce</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <section class="marketing">
+        <h2> AI-Powered Marketing Strategy</h2>
+        <input type="text" id="business-type" placeholder="Enter your business type (e.g., bakery, gym)">
+        <button onclick="generateMarketingStrategy()">Generate Strategy</button>
+        <div id="marketing-result"></div>
+    </section>
+
+    <section class="social-media">
+        <h2> Schedule Social Media Ads</h2>
+        <input type="text" id="ad-content" placeholder="Ad Content">
+        <input type="date" id="ad-date">
+        <button onclick="scheduleAd()">Schedule Ad</button>
+        <ul id="scheduled-ads"></ul>
+    </section>
+
+    <section class="ad-performance">
+        <h2> Ad Performance Analytics</h2>
+        <canvas id="adChart"></canvas>
+    </section>
+
+</body>
+</html>

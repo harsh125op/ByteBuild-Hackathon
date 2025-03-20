@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Waste</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <h2>SmartWaste</h2>
+        <ul>
+            <li><a href="index.html">Classify Waste</a></li>
+            <li><a href="report.html">Report Waste</a></li>
+            <li><a href="bins.html">Bin Locator</a></li>
+            <li><a href="pickup.html">Schedule Pickup</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Report Waste</h2>
+        <form onsubmit="reportWaste(event)">
+            <input type="text" id="wasteType" placeholder="Waste Type" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

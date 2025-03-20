@@ -1,0 +1,304 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s ease-in-out;
+    
+
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    background: rgba(0, 255, 127, 0.2);
+    color: #00ff7f;
+    transform: scale(1.1);
+}
+
+/* Sections all together taken for same webpages */
+.marketing, .social-media,.seo, .ecommerce, .analytics, .chat-container {
+    max-width: 650px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.marketing:hover, .seo:hover, .ecommerce:hover, .analytics:hover, .chat-container:hover {
+    transform: scale(1.02);
+}
+
+/* Buttons */
+button {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #0059ff, #00bcd4);
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #10c7df, #0c67cf);
+    transform: scale(1.05);
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.layer-blur{
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+
+ }
+ header h1{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+ }
+ header h2{
+    font-size: 2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+    
+ }
+
+ nav{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+
+ }
+nav h2{
+    margin-left: 66px;
+
+    
+}
+ nav a{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+    
+ }
+
+ nav a:hover{
+    color:#e7e7e7;
+
+ }
+ .btn-signing{
+  background-color: #a7a7a7;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+ }
+
+ .btn-signing:hover{
+  background-color: white;
+ }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+  }
+  .content{
+    max-height: 40rem;
+    margin-left: 10%;
+    z-index: 999;
+  }
+  
+   .content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    /* margin-left: 1%; */
+    letter-spacing: 0.1em;
+    margin: 2rem;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+    color: white;
+
+   }
+  .description{
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    max-width: 35rem;
+    color: gray;
+    margin-left: 24%;
+   }
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+    margin: 3rem;
+}
+
+.btn{
+    text-decoration: none;
+    border: 5px solid #0d0c0c;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+    animation: rgbBorder 3s infinite;
+    margin-left: 40%;
+    color: rgb(1, 17, 72);
+    /* text-shadow: 2px 2px 8px rgba(0,0,0); */
+    background-color: white;
+}
+.btn:hover{
+    /* background-color: #758dc0; */
+    background: linear-gradient(135deg, #10c7df, #0c67cf);
+  
+}
+.create a{
+    color: white;
+    font-family: 400;
+    font-display: bold;
+    text-decoration: none;
+}
+
+@keyframes rgbBorder{
+    0%{border-color: red;}
+    25%{border-color: blue;}
+    50%{border-color: green;}
+    75%{border-color:yellow;}
+    100%{border-color:red;}
+}
+.builder{
+    align-items: center;
+    font-size: 24px;
+    font-size: 34px;
+    font-weight: 700;
+    padding-top: 22vh;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+}
+.elements {
+    font-size: 44px;
+    /* margin-left: 15%; */
+    padding: 20px;
+}
+.social-media{
+    padding-top: 6vh;
+}
+.marketing h2{
+    margin-left: 12px;
+    padding-bottom: 6vh;
+}
+.seo{
+    padding-bottom: 6vh;
+}
+.ecommerce{
+    padding-bottom: 6vh;
+}
+.ecommerce h2{
+    padding-bottom: 3vh;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+    font-size: 33px;
+    font-weight: 700;
+}
+.ecommerce p{
+    padding-top: 10px;
+}
+.storefront{
+    padding-top: 5vh;
+}
+.about, .features, .create, .cta{
+    margin: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding-top: 15px;
+    padding: 8vh;
+    border-radius: 15px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+    font-size: 24px;
+}
+.about:hover ,.features:hover, .create:hover, .cta:hover{
+    transform: scale(1.02);
+}
+.analytics h2{
+    padding-top: 3px;
+    padding-bottom: 44px;
+    font-size: 2rem;
+    font-weight: 400px;
+    text-shadow: 2px 2px 8px rgba(0,0,0);
+}
